@@ -1,6 +1,7 @@
 # Theory
 
  The first step in the analysis of control system is to derive its mathematical model of the complete system. This would help in understanding the working of the complete system.
+
 **The Plant(Oven)**
 
 Plant to be controlled is an electric oven,the temperature of which must adjust itself in accordance with the reference or command.This is a thermal system which basically involves transfer of heat from one section to another.In present case we are interested in transfer of heat from heater coil to the oven and leakage of heat from the oven to the atmosphere.Here a lumped parameter model is considered.For precise analysis,a distributed parameter model must be used.Another difficulty associated with temperature control system is that 
@@ -62,9 +63,12 @@ such controller gives non-zero steady state error to step input for a type-0 sys
 **Proportional-Integral Controller:**
 
 Mathematical equation of such a controller is given by,
-$$  m(t)= k_{p} e(t)+ k_i \int_{0}^{t}e(t)dt = K_p[e(t)+\frac{1}{T_1}\int_{0}^{t}e(t)dt] $$
-It may be easily seen that this controller introduces a pole to origin,i.e. increases the system type by unity.The steady state error therefore reduced.a block diagram representation is shown below.Qualitatively,any small error signal e(t),present in the system,would get continuously integrated and generate actuator signal m(t)forcing the plant output to exactly correspond to the reference input so that error is zero. In practical system the error may not be zero due to imperfections in an electronic integrator caused by biased current needed,noise and drift present and leakage of the integrator capacitor.The integral(I)block in the present system is realised with a circuit,that has a transfer function :<br>
-$$ G_{r}(s)=\frac{1}{41s}=\frac{K_{i}}{s} $$
+
+$$m(t)= k_{p} e(t)+ k_i \int_{0}^{t}e(t)dt = K_p[e(t)+\frac{1}{T_1}\int_{0}^{t}e(t)dt]$$
+
+It may be easily seen that this controller introduces a pole to origin,i.e. increases the system type by unity.The steady state error therefore reduced.a block diagram representation is shown below.Qualitatively,any small error signal e(t),present in the system,would get continuously integrated and generate actuator signal m(t)forcing the plant output to exactly correspond to the reference input so that error is zero. In practical system the error may not be zero due to imperfections in an electronic integrator caused by biased current needed,noise and drift present and leakage of the integrator capacitor.The integral(I)block in the present system is realised with a circuit,that has a transfer function :
+
+$$G_{r}(s)=\frac{1}{41s}=\frac{K_{i}}{s}$$
 The integral gain is therefore adjustable in the range 0 to 0.024 (approx).Due to the tolerance of large capacitance's the value of k<sub>i</sub> is approximate.   
 			   
 <div align="center">				
