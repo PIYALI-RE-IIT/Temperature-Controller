@@ -10,24 +10,36 @@ whereas the temperature rise is produced by energy input,which is controllable,t
 <img alt="" src="./images/fig2-3.png" style="width:553px;height:489px;">
 </div>
 
-$$ {\Theta = \alpha \Delta T} $$
-				where, $$ {\Theta}  = rate\ of\ heat\ flow\ in\ Joule/sec.$$
-						$$ {\Delta}  = temperature\ difference\ in  ^\circ C $$
-						$$ {\alpha} = constant $$
-Under assumption of linearity,the themal resistance is defined as, R=Temperature difference/rate of heat flow  
-$$ = \frac{\Delta T}{\Theta} = \frac{1}{\alpha} $$.
+$${\Theta = \alpha \Delta T}$$
+where, $${\Theta}= rate\ of\ heat\ flow\ in\ Joule/sec.$$
+$${\Delta}  = temperature\ difference\ in  ^\circ C$$
+$$ {\alpha} = constant $$
+
+Under assumption of linearity,the themal resistance is defined as, R=Temperature difference/rate of heat flow
+
+$$=\frac{\Delta T}{\Theta} = \frac{1}{\alpha}$$.
+
 This is analogous to electrical resistance defined by I=V/R. In a similar manner thermal capacitance of the mass is defined by
-$$ \Theta = Cd \frac{\Delta T}{dT} $$
+
+$$\Theta = Cd \frac{\Delta T}{dT}$$
+
 which is analogous to the V-I relationship ofa capacitor, namely I = C dV/dt. In the case of heat,
 C = Rate of heat flow/Rate of temperature change.The equation of an oven may now be wHtten by combining the above two equations, implying that a part of the heat input is used in increasing the temperature of the oven and the rest zoes out as loss. Thus
-$$ \Theta = C dT/dt + (l/R)T, $$
+
+$$\Theta = C dT/dt + (l/R)T,$$
+
 with the initial condition T(t=0) = T<sub>amb</sub>. Now, taking Laplace transform with zero initial condition,
-$$ \frac{T(s)}{\Theta(s)} = \frac{R}{1+sCR} $$
+
+$$\frac{T(s)}{\Theta(s)} = \frac{R}{1+sCR}$$
+
 An analogous electrical network and block diagram may be drawn as in defined by the equation I=CdV/dt+V/R
 The temperature rise in response to the heat input is not instantaneous. A certain amount
 Of time is needed to transfer the heat by convection and conduction inside the oven. This requires a delay or transportation lag term, exp(-sTl), to be included in the transfer function, where Tl is the time lag in seconds.The open loop transfer function of the plant is given by :
-$$ G(s)= \frac{ke^{-sT_2}}{1+sT_1} $$
+
+$$G(s)= \frac{ke^{-sT_2}}{1+sT_1}$$
+
 where k = DC gain of the system, T<sub>1</sub>=Time Constant ,T<sub>2</sub>=Delay Time
+
 <div align = "center">
 <img alt="" src="./images/ol.png" style="width:431px;height:294px;">
 </div>
@@ -64,26 +76,30 @@ The integral gain is therefore adjustable in the range 0 to 0.024 (approx).Due t
 			   
 **Proportional-Integral-Derivative Controller:**
 The governing equation here is,
-$$  m(t)= k_{p} e(t)+ k_i \int_{0}^{t}e(t)dt + K_D\frac{de(t)}{dt} = K_p[e(t)+\frac{1}{T_1}\int_{0}^{t}e(t)dt + T_D\frac{de(t)}{dt}] $$
+$$m(t)= k_{p} e(t)+ k_i \int_{0}^{t}e(t)dt + K_D\frac{de(t)}{dt} = K_p[e(t)+\frac{1}{T_1}\int_{0}^{t}e(t)dt + T_D\frac{de(t)}{dt}]$$
 so that in Laplace transform domain,
-$$ \frac{M(s)}{E(s)}=(k_p +T_D s+\frac{1}{T_1 s}) $$
+$$\frac{M(s)}{E(s)}=(k_p +T_D s+\frac{1}{T_1 s})$$
 			   
 A simple analysis would show that the derivative block essentially increases the damping ratio of the system and therefore improves the dynamic performance
 by reducing overshoot.The PID controller therefore helps in reducing the steady state error with an improvement in the transient response.The Derivative(D)block in the present system is realised with a circuit,that has a transfer function :
-$$ G_{D}(s)=19.97s(approx) $$
+
+$$G_{D}(s)=19.97s(approx)$$
+
 The derivative gain is therefore adjustable in the range of 0 to 23.5 approximately.Again the approximation is Due to the tolerance of large capacitance's the value.PID controller is one of tthe most widely used controller because of its simplicity. By adjusting its coefficients k<sub>p</sub>,k<sub>i</sub>,k<sub>D</sub>
 the controller can be used in variety of systems.The process of setting the controller coefficients to suit a given plant is known as tuning.There are many methods of tuning a PID controller. In present experiment, the method of Ziegler-Nichol has been introduced which is suitable for the oven control system.
 According to the above said rule,
 in P control,
-$$ k_p = (\frac{1}{K})\frac{T_1}{T_2} $$
+
+$$k_p = (\frac{1}{K})\frac{T_1}{T_2}$$
 in PI control,<br>
-$$ k_p = (\frac{0.9}{K})\frac{T_1}{T_2} $$ 
-$$ k_i = \frac{1}{3.3T_2} $$
+$$k_p = (\frac{0.9}{K})\frac{T_1}{T_2}$$ 
+$$k_i = \frac{1}{3.3T_2}$$
 				
 in PID control,
-$$ k_p = (\frac{1.2}{K})\frac{T_1}{T_2} $$ 
-$$ k_i = \frac{1}{2T_2} $$
-$$ k_D = 0.5T_2 $$
+
+$$k_p = (\frac{1.2}{K})\frac{T_1}{T_2}$$ 
+$$k_i = \frac{1}{2T_2}$$
+$$k_D = 0.5T_2$$
 				
 <div align="center">				
 <img alt="" src="./images/Dcircuit.png" style="width:400px;height:300px;">
